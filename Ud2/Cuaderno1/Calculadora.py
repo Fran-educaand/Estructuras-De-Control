@@ -8,24 +8,16 @@
 import tkinter as tk
 
 ventana = tk.Tk()
-ventana.title("Botó y tres colores")
-ventana.geometry("600x400")
+ventana.title("Cambiar tamaño")
+ventana.geometry("400x200")
 
-boton0 = tk.Button(ventana, text="0", command=cambiarColor)
-boton1 = tk.Button(ventana, text="1", command=cambiarColor)
-boton2= tk.Button(ventana, text="2", command=cambiarColor)
-boton3 = tk.Button(ventana, text="3", command=cambiarColor)
-boton4 = tk.Button(ventana, text="4", command=cambiarColor)
-boton5 = tk.Button(ventana, text="5", command=cambiarColor)
-boton6 = tk.Button(ventana, text="6", command=cambiarColor)
-boton7 = tk.Button(ventana, text="7", command=cambiarColor)
-boton8 = tk.Button(ventana, text="8", command=cambiarColor)
-boton9 = tk.Button(ventana, text="9", command=cambiarColor)
-botonMas = tk.Button(ventana, text="+", command=cambiarColor)
-botonMenos = tk.Button(ventana, text="-", command=cambiarColor)
-boton1.pack() 
-boton2.pack() 
-boton3.pack() 
+cont = 0
+for r in range(0, 4):
+    for c in range(0, 4):
+        cell = tk.Button(ventana, text=f'{cont}')
+        cell.grid(padx=5, pady=5, row=r, column=c)
+        cont = cont +1
+      
+
 ventana.mainloop()
-
 

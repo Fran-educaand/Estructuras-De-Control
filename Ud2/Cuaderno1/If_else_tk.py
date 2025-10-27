@@ -26,6 +26,7 @@ def cambiarColor ():
 
 
 boton = tk.Button(ventana, text="Haz clic aquí", command=cambiarColor)
+ventana.mainloop()
 
 
 
