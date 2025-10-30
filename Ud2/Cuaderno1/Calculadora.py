@@ -7,17 +7,54 @@
 #  y recorriéndola con un bucle.
 import tkinter as tk
 
-ventana = tk.Tk()
-ventana.title("Cambiar tamaño")
-ventana.geometry("400x200")
+frame = tk.Tk()
+frame.title("Cambiar tamaño")
+frame.geometry("400x200")
+
+
+
+entrada =  tk.Entry(frame)
+entrada.config ( state = "readonly")
+entrada.pack(pady=15)
+
+frame = tk.Frame(frame)
+frame.pack()
 
 cont = 0
-for r in range(0, 4):
-    for c in range(0, 4):
-        cell = tk.Button(ventana, text=f'{cont}')
-        cell.grid(padx=5, pady=5, row=r, column=c)
-        cont = cont +1
-      
+for fila in range(0, 4):
+    for columna in range(0, 4):
+        if fila == 0 and columna <3:
+            cell = tk.Button(frame, text=f'{cont}')
+            cell.grid(padx=5, pady=5, row=fila, column=columna)
+            cont = cont +1
+        elif fila == 0 and columna == 3:
+             cell = tk.Button(frame, text=f'+')
+             cell.grid(padx=5, pady=5, row=fila, column=columna)
+             cont = cont +1
+        elif fila == 1 and columna < 3:
+            cell = tk.Button(frame, text=f'{cont}')
+            cell.grid(padx=5, pady=5, row=fila, column=columna)
+            cont = cont +1
+        elif fila == 1 and columna == 3:
+            cell = tk.Button(frame, text=f'-')
+            cell.grid(padx=5, pady=5, row=fila, column=columna)
+        elif fila == 2 and columna < 3:
+            cell = tk.Button(frame, text=f'{cont}')
+            cell.grid(padx=5, pady=5, row=fila, column=columna)
+            cont = cont +1
+        elif fila == 2 and columna == 3:
+            cell = tk.Button(frame, text=f'x')
+            cell.grid(padx=5, pady=5, row=fila, column=columna)
+        elif fila == 3 and columna == 2:
+            cell = tk.Button(frame, text=f'/')
+            cell.grid(padx=5, pady=5, row=fila, column=columna)
+            
+        elif fila == 3 and columna == 3:
+            cell = tk.Button(frame, text=f'=')
+            cell.grid(padx=5, pady=5, row=fila, column=columna)
+            
+            
+            
 
-ventana.mainloop()
+frame.mainloop()
 
