@@ -10,7 +10,16 @@ ventana = tk.Tk()
 ventana.title("Formulario ")
 ventana.geometry("400x300")
 
-def verifica(event):
+def verifica():
+    if entradaNombre.get()== "":
+       return  messagebox.showerror(message='Nombre vacio',title='Error')
+    elif combo.get()=="":
+       return  messagebox.showerror(message='Selecciona una opcion',title='Error')
+    elif var1.get():
+       label = tk.Label(ventana,text="Todo completado")
+       label.pack()
+    else:return  messagebox.showerror(message='Selecciona la casilla',title='Error')
+
     
 
 etiquetaNombre = tk.Label(ventana, text="Introduce tu nombre:")
@@ -26,6 +35,7 @@ var1=tk.IntVar()
 check = ttk.Checkbutton(ventana,text='Aceptas cookies',variable=var1)
 check.pack()
 
-boton = ttk.Button(text='Verificar campos',command=)
+boton = ttk.Button(text='Verificar campos',command=verifica)
+boton.pack()
 ventana.mainloop()
 
