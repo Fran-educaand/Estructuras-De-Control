@@ -8,7 +8,7 @@ try:
     listaInt = [int(n) for n in lista.split(",")]
     num = 0
     for n in listaInt:
-     if n%2 ==0 and n > num:
+     if  n%2 ==0 and n > num:
          num = n
     print (num)
 except: print("Error")
